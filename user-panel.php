@@ -2,7 +2,7 @@
 /*
 * Plugin Name:        user-panel
  * Plugin URI:        https://egeekbin.com
- * Description:       This Plugin that provide a custom profile and panel
+ * Description:       This Plugin provide a custom user profile and user panel.
  * Version:           1.0.0
  * Author:            Hamed Elahi
  * Author URI:        https://egeekbin.com
@@ -19,12 +19,20 @@ if ( ! defined( 'WPINC' ) ) {
 class UserPanel{
       public function __construct()
       {
-            
+            $this->define_contants();
+            $this->init();
+
       }
 
       public function define_contants(){
             define('UP_DIR', plugin_dir_path(__FILE__));
             define('UP_URL', plugin_dir_url(__FILE__));
+      }
+
+      public function init(){
+            register_activation_hook(__FILE__, [$this, 'activation']);
+            register_deactivation_hook(__FILE__, [$this, 'deactivation']);
+            $this->start_router();
       }
 
       public function activation(){
@@ -34,4 +42,11 @@ class UserPanel{
       public function deactivation(){
 
       }
+
+      private function start_router(){
+            include "router.php";
+            new Router;
+      }
+
 }
+new UserPanel;
