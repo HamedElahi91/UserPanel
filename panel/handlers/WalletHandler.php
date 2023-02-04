@@ -1,9 +1,15 @@
 <?php
-class WalletHandler{
+include "Handler.php";
+include UP_DIR . "/view.class.php";
+
+class WalletHandler extends Handler{
       public function __construct()
       {
-            var_dump('777');
-            exit;
 
+      }
+      public function index(){
+            View::load('panel/wallet/index.php',[
+                  'name' => 'حامد الهی'
+            ]);
       }
 }

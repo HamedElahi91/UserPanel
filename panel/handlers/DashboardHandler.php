@@ -1,8 +1,15 @@
 <?php
-class DashboardHandler{
+include "Handler.php";
+include UP_DIR . "/view.class.php";
+class DashboardHandler extends Handler{
       public function __construct()
       {
-            var_dump('123');
-            exit;
+
+      }
+
+      public function index(){
+            View::load('panel/dashboard/index.php',[
+                  'name' => 'حامد الهی'
+            ]);
       }
 }

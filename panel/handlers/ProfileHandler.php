@@ -1,9 +1,14 @@
 <?php
-class ProfileHandler{
+include "Handler.php";
+include UP_DIR . "/view.class.php";
+class ProfileHandler extends Handler{
       public function __construct()
       {
-            var_dump('45');
-            exit;
-
+           
+      }
+      public function index(){
+            View::load('panel/profile/index.php',[
+                  'name' => 'حامد الهی'
+            ]);
       }
 }

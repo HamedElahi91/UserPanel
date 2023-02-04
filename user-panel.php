@@ -27,6 +27,8 @@ class UserPanel{
       public function define_contants(){
             define('UP_DIR', plugin_dir_path(__FILE__));
             define('UP_URL', plugin_dir_url(__FILE__));
+            define('UP_VIEWS', UP_DIR.'views/');
+            define('UP_ASSETS_URL', UP_URL. 'assets/');
       }
 
       public function init(){

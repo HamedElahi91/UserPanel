@@ -23,7 +23,8 @@ class Router{
             }
             $handler_path = $this->get_handler_file($handler_name);
             include_once $handler_path;
-            new $handler_name;
+            $handlerInstance = new $handler_name;
+            $handlerInstance->index();
             exit;
       }
 
