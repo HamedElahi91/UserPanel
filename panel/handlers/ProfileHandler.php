@@ -7,7 +7,7 @@ class ProfileHandler extends Handler{
            
       }
       public function index(){
-            View::load('panel/profile/index.php',[
+            View::load('panel.profile.index',[
                   'name' => 'حامد الهی'
             ]);
       }

@@ -8,7 +8,7 @@ class WalletHandler extends Handler{
 
       }
       public function index(){
-            View::load('panel/wallet/index.php',[
+            View::load('panel.wallet.index',[
                   'name' => 'حامد الهی'
             ]);
       }

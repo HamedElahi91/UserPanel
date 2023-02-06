@@ -93,9 +93,7 @@
                     </div>
                 </div>
             </li>
-            <li>
-                <?php echo $name; ?>
-            </li>
+            
         </ul>
     </div>
 
@@ -715,6 +713,39 @@
                         </li>
                     </ul>
                 </div>
+                <div class="pages" id="custom-pages">
+                    <ul>
+                        <li class="navigation-divider">
+                            <a href="#">
+                                <i class="fa fa-info-circle"></i>	&nbsp;
+                                پیشخوان
+                            </a>
+                            <ul style="display:none;">
+                                <li><a href="#">پیشخوان</a></li>
+                            </ul>
+                        </li>
+                        <li class="navigation-divider">
+                            <a href="#">
+                                <i class="fa fa-user-o"></i>	&nbsp;
+                                پروفایل
+                            </a>
+                            <ul style="display:none;">
+                                <li><a href="#">پروفایل</a></li>
+                            </ul>
+                        </li>
+                        <li class="navigation-divider">
+                            <a href="#">
+                                <i class="fa fa-database"></i>	&nbsp;
+                                کیف پول
+                            </a>
+                            <ul style="display:none;">
+                                <li><a href="#">کیف پول</a></li>
+                                <li><a href="#">تراکنش ها</a></li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- end::navigation menu -->
@@ -728,7 +759,7 @@
         <!-- begin::page-header -->
         <div class="page-header">
             <div class="container-fluid d-sm-flex justify-content-between">
-                <h4>صفحه خالی</h4>
+                <h4><?php echo $current_user->display_name; ?></h4>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">

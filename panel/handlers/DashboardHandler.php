@@ -8,8 +8,24 @@ class DashboardHandler extends Handler{
       }
 
       public function index(){
-            View::load('panel/dashboard/index.php',[
-                  'name' => 'حامد الهی'
-            ]);
+            $current_user = wp_get_current_user();
+            $params = [
+                  'current_user' => $current_user,
+                  'user_post_count' => count_user_posts($current_user->ID) ,
+                  'user_comments_count' => $this->get_user_comments_count($current_user->ID) 
+            ];
+            View::load('panel.dashboard.index', $params);
+      }
+      
+      private function get_user_comments_count($user_id){
+            global $wpdb;
+            $user_comments_count = $wpdb->get_var($wpdb->prepare("
+                  SELECT COUNT(comment_ID)
+                  FROM {$wpdb->prefix}comments
+                  WHERE user_id=%d
+                  AND comment_approved = 1
+            ", $user_id));
+
+            return intval($user_comments_count);
       }
 }
