@@ -3,6 +3,7 @@
     <div class="card">
         <div class="card-body">
             <h5 class="card-title">پروفایل کاربر</h5>
+            <?php echo $message;?>
             <form action="" method="post">
                 <div class="form-group">
                     <label for="InputFullName">نام و نام خانوادگی </label>

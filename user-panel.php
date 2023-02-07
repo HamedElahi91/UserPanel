@@ -35,6 +35,7 @@ class UserPanel{
             register_activation_hook(__FILE__, [$this, 'activation']);
             register_deactivation_hook(__FILE__, [$this, 'deactivation']);
             $this->start_router();
+            $this->start_session();
       }
 
       public function activation(){
@@ -48,6 +49,10 @@ class UserPanel{
       private function start_router(){
             include "router.php";
             new Router;
+      }
+
+      private function start_session(){
+            session_start();
       }
 
 }

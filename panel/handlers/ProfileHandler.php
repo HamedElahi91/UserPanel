@@ -1,6 +1,7 @@
 <?php
 include "Handler.php";
-include UP_DIR . "/view.class.php";
+include_once UP_DIR . "/view.class.php";
+include_once UP_DIR . "/panel/flash.class.php";
 class ProfileHandler extends Handler{
       public function __construct()
       {
@@ -11,8 +12,10 @@ class ProfileHandler extends Handler{
             if(isset($_POST["saveData"])){
                   do_action('up_update_profile');
             }
+            $message = FlashMessage::get();
             $params = [
-                  'current_user' => $this->current_user
+                  'current_user' => $this->current_user,
+                  'message' => $message
             ];
             View::load('panel.profile.index', $params);
       }
@@ -27,6 +30,10 @@ class ProfileHandler extends Handler{
                   $user_data_for_update['user_pass'] = apply_filters('pre_user_pass', $_POST["InputPassword"]);
             }
             $update_result = wp_update_user($user_data_for_update);
-            
+            if(!is_wp_error($update_result)){
+                  FlashMessage::add('اطلاعات شما با موفقیت به روز رسانی شد.');
+            }else{
+                  FlashMessage::add('متاسفانه به روزرسانی با مشکل مواجه شده است.', 2);                  
+            }
       }
 }
