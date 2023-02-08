@@ -3,13 +3,13 @@
 <div class="card">
     <div class="card-body">
         <h5 class="card-title">کیف پول</h5>
-        <p>
-            صفحه خالی...
-        </p>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
+        <div class="alert alert-info">
+            <p>
+                <span>موجودی کیف شما:</span>
+                <span><?php echo $user_wallet; ?></span>
+            </p>
+            
+        </div>
         <div>&nbsp;</div>
     </div>
 </div>

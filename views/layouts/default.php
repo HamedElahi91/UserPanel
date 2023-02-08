@@ -515,7 +515,7 @@
                             </a>
                             <ul style="display:none;">
                                 <li><a href="/dashboard/wallet">کیف پول</a></li>
-                                <li><a href="#">تراکنش ها</a></li>
+                                <li><a href="/dashboard/wallet?action=transactions">تراکنش ها</a></li>
                             </ul>
                         </li>
                     </ul>
