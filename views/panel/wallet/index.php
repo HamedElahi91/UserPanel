@@ -15,7 +15,7 @@
                     <label for="amount" class="sr-only">مبلغ مورد نظر: </label>
                     <input type="number" class="form-control" id="amount" name="amount">
                 </div>    
-                <input type="submit" class="btn btn-primary mb-2" value="پرداخت">
+                <input type="submit" name="startPayment" class="btn btn-primary mb-2" value="پرداخت">
             </form>
         </div>
     </div>
