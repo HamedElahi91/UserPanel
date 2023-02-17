@@ -42,7 +42,7 @@ class PaymentService{
                         return [true, $result->Status];
                   }                   
             }else{
-                  return [true, 'Transaction canceled by user'];
+                  return [false, 'Transaction canceled by user'];
             }
       }
 }

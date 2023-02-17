@@ -13,7 +13,7 @@
                         <?php endif; ?>
 
                         <?php if(false == $status): ?>
-                              <div class="alert alert-success">
+                              <div class="alert alert-danger">
                                     <p>پرداخت ناموفق</p>
                               </div>
                         <?php endif; ?>

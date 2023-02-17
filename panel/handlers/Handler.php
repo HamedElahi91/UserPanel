@@ -3,6 +3,7 @@ abstract class Handler{
       protected $current_user;
       public function __construct()
       {
+            $this->check_user_auth();
             $this->current_user = wp_get_current_user();
       }
       protected function performAction(){
@@ -20,5 +21,12 @@ abstract class Handler{
             return isset($_GET['action']) && !empty($_GET['action']) ? $_GET['action'] : null;
             
       }
+
+      public function check_user_auth(){
+            if(!is_user_logged_in()){
+                  wp_die('شما اجازه دسترسی ندارید.');
+            }
+      }
+
       abstract protected function index();
 }
